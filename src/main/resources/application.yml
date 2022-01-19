@@ -1,0 +1,16 @@
+server:
+  port: 9001
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/Reza-Moein-21/application-configurations.git
+          default-label: liv
+
+management:
+  endpoints:
+    web:
+      base-path: /admin
+
