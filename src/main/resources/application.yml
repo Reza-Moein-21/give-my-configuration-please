@@ -1,7 +1,9 @@
 server:
-  port: 9001
+  port: 9002
 
 spring:
+  application:
+    name: config-server
   cloud:
     config:
       server:
@@ -9,8 +11,15 @@ spring:
           uri: https://github.com/Reza-Moein-21/application-configurations.git
           default-label: liv
 
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://10.10.1.1:9001/eureka
+  instance:
+    preferIpAddress: true
+
 management:
   endpoints:
     web:
-      base-path: /admin
-
+      exposure:
+        include: health,info
